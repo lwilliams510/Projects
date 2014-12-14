@@ -1,0 +1,85 @@
+def SumWithWhile(numbers): 
+    total = 0
+    x = 0
+    while x < len(numbers): 
+        total += numbers[x] 
+        x += 1 
+    return total
+
+def SumWithFor(numbers):
+    total = 0
+    for x in numbers:
+        total += x
+        x += 1
+    return total
+
+def EvenNumbers(n):
+    numbers = []
+    for i in xrange(n):
+        numbers.append(2 * (i))
+    return number
+    
+def PowersOf2(n):
+    x = []
+    for i in xrange(n):
+		x.append (2 ** i)
+    return x
+    
+def ReverseString(s):
+    x = ""
+    for i in s:
+		x = i +x
+    return x
+    
+def IsPalindrome(s):
+    x = ReverseString(s)
+    if x == s:
+        return True
+    else: 
+        return False
+
+def AreAnagrams(a, b):
+	x = sorted (a) == sorted (b)
+	return x
+	
+def HasDuplicates(items):
+    for i in items:
+        if items.count(i) > 1:
+            return True
+        return False
+
+
+def CountOccurrences(s, char):
+    x = 0
+    for lettr in s:
+		if char == lettr:
+			 x +=  1
+    return x
+
+def Calculate(operator, x, y):    
+    if operator == ADD:
+        return x + y
+    if operator == SUBTRACT:
+        return x - y
+    if operator == MULTIPLY:
+        return x * y
+    if operator == DIVIDE:
+        if y == 0:
+            return None
+        return x / y
+    if operator == MODULO:
+        if y == 0:
+            return None
+        return x % y
+    else:
+        return None
+
+def CharacterCounts(s):
+    counts = {}
+    for x in s:
+        if x in counts:
+            counts[x] += 1
+        else:
+            counts[x] = 1
+    return counts
+
