@@ -1,0 +1,185 @@
+# Problem 1 (5 pts):
+# Task: Cube 'a' and return the result.
+#
+# Example: If a = 3, then output should be 27.
+def Problem1(a):
+    return a ** 3
+
+
+print Problem1(3)  # output: 27
+
+
+# Problem 2 (5 pts):
+# Task: Implement xor (abbreviation for 'exclusive or'). Xor should be true if a
+#       and b are not the same. Return the value of a xor b.
+#
+# Example: If a = 2 and b = 9, then output should be True.
+#          If a = 2 and b = 2, then output should be False.
+def Problem2(a, b):
+    return a != b
+
+print Problem2(2, 9)  # output: True
+print Problem2(2, 2)  # output: False
+
+
+# Problem 3 (5 pts):
+# Task: Combine a, b, and c to form a sentence (string) and return the result.
+#       Any sentence will do! Remember during grading that a, b, and c will be
+#       different than above.
+def Problem3(a, b, c):
+    return a + ' works at ' + b + ' and ' + c
+
+print Problem3('Sabrina', 'Google', 'Howard')  # output: A sentence with those words.
+
+
+# Problem 4 (5 pts):
+# Task: Calculate the remainder of the division of the numerator by the
+#       denominator and return the result.
+#
+# Example: If numerator = 10 and denominator = 3, output should be 1.
+def Problem4(numerator, denominator):
+    return numerator % denominator
+
+
+print Problem4(10, 3)  # output: 1
+
+
+# Problem 5 (10 pts):
+# Task: Calculate the square root of 'x' and return the result.
+#
+# Example: If x = 4, then output should be 2.
+def Problem5(x):
+    return  x ** .5
+
+print Problem5(4)  # output: 2
+
+
+# Problem 6 (10 pts):
+# Task: Use one of the shift operators (left or right) to multiply base by 2^exp
+#       and return the result.
+#
+# Example: If base = 4 and exp = 3, output should be 32.
+def Problem6(base, exp):
+    return base << exp
+
+print Problem6(4, 3)  # output: 32
+
+
+# Problem 7 (10 pts):
+# Task: Check to see if a is between b and c. Return True if a is between b and
+#       c, but False otherwise.
+#
+# Example: If a = 10, b = 5, and c = 15, then output should be True.
+#          If a = 10, b = 15, and c = 20, then output should be False.
+def Problem7(a, b, c):
+    return b < a < c or b > a > c
+
+
+print Problem7(10, 5, 15)   # output: True
+print Problem7(10, 15, 20)  # output: False
+
+
+# Problem 8 (10 pts):
+# Task: Swap value1 and value2. Given value1 and value2 above make sure that you
+#       swap value1 to be value2, and value2 to be value1.
+#       Return value1 + value2
+#
+# Example:
+#     Before Swapping: value1 = 'f' and value2 = 'g'
+#     After Swapping:  value1 = 'g' and value2 = 'f'
+#
+# Hint: Make sure you preserve both values during the swap.
+def Problem8(value1, value2):
+    x = value1
+    value1 = value2
+    value2 = x
+    return value1 + value2
+
+print Problem8('f', 'g')  # output: gf
+
+
+# Problem 9 (10 pts):
+# Task: Return num rounded to the nearest multiple of 10 (5 rounds up).
+#
+# Example: If num = 33, then output should be 30.
+#          If num = 58, then output should be 60.
+def Problem9(num):
+    num += 5
+    num -= num % 10
+    return num
+
+print Problem9(33)  # output: 30
+print Problem9(58)  # output: 60
+
+
+# Problem 10 (10 pts):
+# Task: Return the thousandth digit in num. If there is no thousandth digit,
+#       return 0.
+#
+# Example: If num = 123456, then output should be 3.
+def Problem10(num):
+    return ((num / 1000) % 10)
+
+print Problem10(123456)  # output: 3
+
+
+# Problem 11 (10 pts):
+# Task:  Given two ranges a1-a2 and b1-b2, determine if the two ranges overlap.
+#        Store a boolean representing the outcome in a variable named output.
+#
+# Example: Given two ranges 0-3 and 2-4, there is an overlap of 2-3 so
+#          output would be True.
+#
+# Hint:  Remember number lines from math class! Draw number lines to help you
+#        visualize the problem. Also think about all the edge cases.
+def Problem11(a1, a2, b1, b2):
+    return a1 < b1 or a2 > b1
+
+print Problem11(0, 3, 2, 4)  # output: True
+
+
+# Problem 12 (10 pts):
+# Task: Calculate the distance between two points (x1, y1) and (x2, y2) and
+#       store it in output. If you don't remember your high school math, feel
+#       free to Google the distance formula.
+#
+# Example: Given points (-2, 2) and (2, 5), output should be 5.
+#          (In this example, x1 = -2, y1 = 2, x2 = 2, and y2 = 5.)
+def Problem12(x1, y1, x2, y2):
+    return (((x2 - x1) ** 2) + ((y2 - y1) ** 2)) ** .5
+
+print Problem12(-2, 2, 2, 5)  # output: 5
+
+
+# Problem BONUS A (5 pts):
+# Task: Return the nth digit in num. (The rightmost digit is at n = 1)
+#
+# Example: If num = 9876543 and n = 3, then output should be 5.
+def BonusA(num, n):
+  pass
+
+print BonusA(9876543, 3)  # output: 5
+
+
+# Problem BONUS B (5 pts):
+# Task: Convert the given time (which represents total minutes) into
+#       days/hours/minutes. Store your results in variables named days, hours,
+#       and minutes and return a tuple containing those values.
+#
+# Example:
+#     If time = 15, then your result variables should be:
+#         days = 0, hours = 0, minutes = 15
+#     If time = 150, then your result variables should be:
+#         days = 0, hours = 2, minutes = 30
+#     If time = 1500, then your result variables should be:
+#         days = 1, hours = 1, minutes = 0
+def BonusB(time):
+    days=time//1440
+    hours=(time-(days*1440))//60
+    minutes=(time-((days*1440)+(hours*60)))
+    return days, hours, minutes
+
+print BonusB(15)    # output: (0, 0, 15)
+print BonusB(150)   # output: (0, 2, 30)
+print BonusB(1500)  # output: (1, 1, 0)
+
